@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaywood Pizza House — Family Takeaway on Wootton Road, King's Lynn · Since 1987</title>
+<meta name="description" content="Stone-baked pizzas, doner kebabs, burgers and pasta from a family takeaway on Wootton Road, Gaywood. Call 01553 767012 to order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ember:#8E3B22;
+    --ember-bright:#C0392B;
+    --clay:#D08760;
+    --cream:#F2E6D2;
+    --paper:#F8EFDE;
+    --ink:#2D1A11;
+    --ticket:#E8B844;
+    --rule:#2D1A1133;
+    --display:"Big Shoulders Display","Arial Narrow",sans-serif;
+    --body:"Work Sans",system-ui,sans-serif;
+    --measure:60ch;
+    --rhythm:clamp(1rem,.7rem + .6vw,1.125rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;background:var(--paper)}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    font-size:var(--rhythm);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.10  0 0 0 0 0.07  0 0 0 0.45 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+    opacity:.06;mix-blend-mode:multiply;
+  }
+  h1,h2,h3,h4{font-family:var(--display);font-weight:900;letter-spacing:.005em;line-height:.9;text-wrap:balance}
+  p{text-wrap:pretty;hyphens:auto;max-width:var(--measure)}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+
+  /* ---------------- TOP BAR ---------------- */
+  .topbar{
+    position:sticky;top:0;z-index:30;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(.95rem,.8rem + .3vw,1.1rem);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .topbar__row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:.7rem clamp(1rem,4vw,2.5rem);
+    gap:1rem;
+  }
+  .topbar__mark{display:flex;align-items:baseline;gap:.5rem;color:var(--ember)}
+  .topbar__mark span:last-child{color:var(--ink);font-weight:500;font-size:.85em}
+  .topbar nav{display:flex;gap:clamp(.7rem,2vw,1.8rem)}
+  .topbar nav a{
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .2s,color .2s;
+  }
+  .topbar nav a:hover{color:var(--ember);border-color:var(--ember)}
+  .topbar__call{
+    background:var(--ember);color:var(--paper);
+    padding:.55rem 1rem;text-decoration:none;
+    border-radius:0;
+  }
+  .topbar__call:hover{background:var(--ink)}
+  @media (max-width:720px){
+    .topbar nav{display:none}
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    min-height:88vh;
+    border-bottom:1px solid var(--rule);
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:auto}
+  }
+  .hero__left{
+    padding:clamp(2rem,6vw,5rem) clamp(1.25rem,5vw,4rem);
+    display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+    background:var(--paper);
+  }
+  .hero__eyebrow{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;
+    font-weight:500;font-size:.95rem;color:var(--ember);
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .hero__eyebrow::before{
+    content:"";display:inline-block;width:2.4rem;height:2px;background:var(--ember);
+  }
+  .hero__wordmark{
+    font-family:var(--display);font-weight:900;
+    font-size:clamp(3.4rem,12vw,9rem);
+    line-height:.82;letter-spacing:-.015em;
+    color:var(--ink);
+    text-transform:uppercase;
+  }
+  .hero__wordmark span{display:block}
+  .hero__wordmark .l2{color:var(--ember)}
+  .hero__wordmark .l3{color:var(--ink);font-style:italic;font-weight:700}
+  .hero__sub{
+    font-family:var(--body);font-weight:500;font-size:clamp(1.05rem,1.2vw + .8rem,1.35rem);
+    max-width:36ch;color:var(--ink);
+  }
+  .hero__sub b{color:var(--ember);font-weight:700}
+  .hero__meta{
+    display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:flex-end;
+    padding-top:2rem;border-top:1px solid var(--rule);
+  }
+  .hero__meta dl{display:flex;flex-direction:column;gap:.2rem}
+  .hero__meta dt{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.15em;
+    font-weight:500;font-size:.75rem;color:var(--ember);
+  }
+  .hero__meta dd{font-weight:500;font-size:1.05rem}
+  .hero__meta a{text-decoration:none;border-bottom:1px solid var(--ink)}
+  .hero__meta a:hover{color:var(--ember);border-color:var(--ember)}
+
+  .hero__right{
+    background:var(--ember);
+    color:var(--cream);
+    padding:clamp(2rem,4vw,3.5rem);
+    display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+    position:relative;overflow:hidden;
+  }
+  .hero__right::after{
+    content:"";position:absolute;inset:auto -10% -20% auto;width:60%;aspect-ratio:1;
+    background:radial-gradient(circle at 50% 50%,var(--ticket) 0,var(--ticket) 30%,transparent 70%);
+    opacity:.25;pointer-events:none;
+  }
+  /* SVG oven illustration container */
+  .oven{
+    width:100%;max-width:340px;margin:0 auto;
+    color:var(--ticket);
+    filter:drop-shadow(0 6px 0 rgba(0,0,0,.18));
+  }
+  .oven svg{display:block;width:100%;height:auto}
+  .hero__quote{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(1.5rem,2vw + .8rem,2.4rem);
+    line-height:1.05;color:var(--cream);
+    border-top:1px solid #ffffff33;padding-top:1.5rem;
+  }
+  .hero__quote em{color:var(--ticket);font-style:normal}
+  .hero__bullets{
+    list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;
+    font-weight:500;font-size:.95rem;
+  }
+  .hero__bullets li{
+    padding:.35rem .7rem;border:1px solid #ffffff44;border-radius:0;
+  }
+
+  /* ---------------- MARQUEE ---------------- */
+  .marquee{
+    overflow:hidden;background:var(--ink);color:var(--ticket);
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    --speed:38s;
+  }
+  .marquee__track{
+    display:inline-flex;gap:3.5rem;white-space:nowrap;
+    padding:.9rem 0;
+    font-family:var(--display);text-transform:uppercase;
+    font-weight:700;letter-spacing:.06em;
+    font-size:clamp(1.1rem,1.5vw + .6rem,1.6rem);
+    animation:scroll var(--speed) linear infinite;
+    will-change:transform;
+  }
+  .marquee__track span{display:inline-flex;align-items:center;gap:3.5rem}
+  .marquee__track span::after{
+    content:"";display:inline-block;width:.5rem;height:.5rem;background:var(--ember-bright);
+    transform:rotate(45deg);flex:none;
+  }
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .marquee__track{animation:none}
+  }
+
+  /* ---------------- SECTIONS ---------------- */
+  section{padding:clamp(3.5rem,8vw,7rem) clamp(1.25rem,5vw,4rem)}
+  .section-label{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;
+    font-weight:500;font-size:.85rem;color:var(--ember);margin-bottom:1rem;
+    display:flex;align-items:center;gap:.7rem;
+  }
+  .section-label::before{
+    content:"";display:inline-block;width:1.8rem;height:1px;background:var(--ember);
+  }
+  .section-title{
+    font-size:clamp(2.4rem,5vw + 1rem,5.5rem);
+    line-height:.92;letter-spacing:-.015em;
+    text-transform:uppercase;
+    margin-bottom:2rem;
+    max-width:18ch;
+  }
+
+  /* ----- ABOUT (cream slab) ----- */
+  #about{background:var(--cream)}
+  .about__grid{
+    display:grid;grid-template-columns:1.2fr .8fr;
+    gap:clamp(2rem,5vw,5rem);align-items:start;
+  }
+  @media (max-width:820px){.about__grid{grid-template-columns:1fr}}
+  .about__body p + p{margin-top:1.1rem}
+  .about__body p{font-size:clamp(1.05rem,.6vw + .95rem,1.2rem)}
+  .about__body p:first-of-type::first-line{font-weight:700}
+  .about__facts{
+    display:flex;flex-direction:column;gap:1.4rem;
+    border-left:3px solid var(--ember);padding:.4rem 0 .4rem 1.5rem;
+  }
+  .about__facts dt{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.15em;
+    font-weight:500;font-size:.78rem;color:var(--ember);margin-bottom:.15rem;
+  }
+  .about__facts dd{font-weight:500;font-size:1.05rem;line-height:1.4}
+
+  /* ----- MENU (ink slab — editorial broadsheet) ----- */
+  #menu{background:var(--ink);color:var(--paper)}
+  #menu .section-label{color:var(--ticket)}
+  #menu .section-label::before{background:var(--ticket)}
+  #menu .section-title{color:var(--paper)}
+  #menu .menu__intro{
+    color:#F8EFDECC;max-width:48ch;font-size:1.1rem;margin-bottom:3rem;
+  }
+  .menu__list{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
+    gap:0;
+    border-top:1px solid #ffffff22;
+  }
+  .menu__item{
+    padding:1.8rem 0;
+    border-bottom:1px solid #ffffff22;
+    display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;
+    padding-right:clamp(1rem,3vw,3rem);
+  }
+  .menu__item:not(:last-child){
+    border-right:1px solid #ffffff22;padding-right:clamp(1rem,3vw,3rem);
+  }
+  @media (max-width:820px){
+    .menu__item{border-right:none !important;padding-right:0}
+  }
+  .menu__num{
+    font-family:var(--display);font-weight:700;font-size:2.2rem;
+    color:var(--ticket);line-height:1;letter-spacing:.02em;
+  }
+  .menu__heading{
+    font-family:var(--display);text-transform:uppercase;font-weight:900;
+    font-size:clamp(1.4rem,1vw + 1.1rem,1.9rem);
+    letter-spacing:-.005em;line-height:1;margin-bottom:.6rem;
+    color:var(--paper);
+  }
+  .menu__heading em{color:var(--ember-bright);font-style:normal}
+  .menu__desc{color:#F8EFDEDD;font-size:1rem;line-height:1.5;max-width:38ch}
+  .menu__cta{
+    margin-top:3rem;padding-top:2rem;border-top:1px solid #ffffff33;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;align-items:center;
+  }
+  .menu__cta p{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;
+    font-weight:700;font-size:1.3rem;color:var(--ticket);
+  }
+  .menu__cta a{
+    background:var(--ticket);color:var(--ink);text-decoration:none;
+    padding:1rem 1.8rem;font-family:var(--display);font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;font-size:1.2rem;
+    border:2px solid var(--ticket);transition:background .2s,color .2s;
+  }
+  .menu__cta a:hover{background:transparent;color:var(--ticket)}
+
+  /* ----- GALLERY (clay slab, placeholder grid) ----- */
+  #gallery{background:var(--clay);color:var(--ink)}
+  #gallery .section-label{color:var(--ink)}
+  #gallery .section-label::before{background:var(--ink)}
+  .gallery__intro{max-width:50ch;margin-bottom:2.5rem;font-size:1.08rem}
+  .gallery__grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));
+    gap:1rem;
+  }
+  .gallery__card{
+    aspect-ratio:1/1.1;
+    background:
+      repeating-linear-gradient(45deg,#ffffff14 0 1px,transparent 1px 14px),
+      linear-gradient(180deg,var(--ember) 0%,var(--ember) 40%,#7a2f1b 100%);
+    color:var(--cream);
+    display:flex;align-items:flex-end;justify-content:flex-start;
+    padding:1.2rem;
+    position:relative;overflow:hidden;
+  }
+  .gallery__card:nth-child(3n){background:
+    repeating-linear-gradient(45deg,#00000018 0 1px,transparent 1px 14px),
+    linear-gradient(180deg,var(--ticket) 0%,var(--ticket) 40%,#b18c2a 100%);
+    color:var(--ink);
+  }
+  .gallery__card:nth-child(5n){background:
+    repeating-linear-gradient(45deg,#ffffff10 0 1px,transparent 1px 14px),
+    linear-gradient(180deg,var(--ink) 0%,var(--ink) 40%,#1a0e07 100%);
+    color:var(--paper);
+  }
+  .gallery__card span{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;
+    font-weight:700;font-size:.95rem;
+  }
+  .gallery__card small{
+    position:absolute;top:1rem;right:1.2rem;
+    font-family:var(--display);font-weight:500;font-size:.75rem;letter-spacing:.15em;
+    opacity:.7;
+  }
+  .gallery__note{
+    margin-top:2.5rem;padding:1rem 1.2rem;
+    border:1px dashed var(--ink);
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;
+    font-weight:500;font-size:.95rem;display:inline-block;
+  }
+
+  /* ----- CONTACT (paper slab) ----- */
+  #contact{background:var(--paper)}
+  .contact__grid{
+    display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);
+    align-items:start;
+  }
+  @media (max-width:820px){.contact__grid{grid-template-columns:1fr}}
+  .contact__block dl{display:flex;flex-direction:column;gap:1.8rem}
+  .contact__block dt{
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;
+    font-weight:500;font-size:.82rem;color:var(--ember);margin-bottom:.4rem;
+  }
+  .contact__block dd{
+    font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2vw + 1rem,2.5rem);
+    line-height:1;letter-spacing:-.005em;
+  }
+  .contact__block dd a{text-decoration:none}
+  .contact__block dd a:hover{color:var(--ember)}
+  .contact__block .small{
+    font-family:var(--body);font-weight:500;font-size:1rem;line-height:1.5;
+    text-transform:none;letter-spacing:0;
+  }
+  .map-wrap{
+    aspect-ratio:4/3;border:1px solid var(--rule);overflow:hidden;
+    background:var(--cream);
+  }
+  .map-wrap iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85) contrast(.95)}
+
+  /* ----- FOOTER ----- */
+  footer{
+    background:var(--ink);color:var(--paper);
+    padding:clamp(3rem,5vw,4rem) clamp(1.25rem,5vw,4rem);
+  }
+  .foot__grid{
+    display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem;
+    border-bottom:1px solid #ffffff22;padding-bottom:2.5rem;
+  }
+  @media (max-width:760px){.foot__grid{grid-template-columns:1fr}}
+  .foot__mark{
+    font-family:var(--display);font-weight:900;
+    font-size:clamp(2rem,4vw + .8rem,3.4rem);
+    line-height:.85;text-transform:uppercase;color:var(--paper);
+  }
+  .foot__mark span{display:block}
+  .foot__mark .a{color:var(--ticket)}
+  .foot__mark small{
+    display:block;margin-top:1rem;
+    font-family:var(--body);font-weight:500;font-size:.95rem;
+    text-transform:none;color:#F8EFDECC;max-width:32ch;line-height:1.5;
+  }
+  .foot__col h4{
+    font-size:.85rem;text-transform:uppercase;letter-spacing:.2em;
+    color:var(--ticket);font-weight:500;font-family:var(--display);
+    margin-bottom:.9rem;
+  }
+  .foot__col p,.foot__col a{
+    font-family:var(--body);font-size:1rem;line-height:1.6;
+    color:#F8EFDEEE;text-decoration:none;display:block;
+  }
+  .foot__col a:hover{color:var(--ticket)}
+  .foot__bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    padding-top:1.8rem;
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.15em;
+    font-size:.8rem;color:#F8EFDE99;
+  }
+
+  /* ---------- scroll reveal ---------- */
+  @supports (animation-timeline: view()){
+    .reveal{
+      animation: rise both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+    @keyframes rise{
+      from{opacity:0;transform:translateY(1.5rem)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__row">
+    <div class="topbar__mark">
+      <span>Gaywood Pizza House</span><span>· Est. 1987</span>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <a class="topbar__call" href="tel:+441553767012">Call · 01553 767012</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Welcome">
+  <div class="hero__left">
+    <div>
+      <p class="hero__eyebrow">16 Wootton Road · PE30 4EX · King's Lynn</p>
+      <h1 class="hero__wordmark">
+        <span>Gaywood</span>
+        <span class="l2">Pizza</span>
+        <span class="l3">House.</span>
+      </h1>
+    </div>
+
+    <p class="hero__sub">
+      A family takeaway on Wootton Road, sliding hot pizzas across the counter
+      <b>since 1987</b>. Plus doner kebabs, burger meal deals, pasta and kids' boxes —
+      ready when you ring, ready when you walk in.
+    </p>
+
+    <div class="hero__meta">
+      <dl>
+        <dt>Order by phone</dt>
+        <dd><a href="tel:+441553767012">01553 767012</a></dd>
+      </dl>
+      <dl>
+        <dt>Find us</dt>
+        <dd>16 Wootton Road, Gaywood</dd>
+      </dl>
+      <dl>
+        <dt>Trading since</dt>
+        <dd>1987 — same ovens, same street</dd>
+      </dl>
+    </div>
+  </div>
+
+  <aside class="hero__right" aria-hidden="false">
+    <div class="oven" aria-hidden="true">
+      <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stone pizza oven">
+        <!-- floor -->
+        <rect x="20" y="270" width="300" height="30" fill="currentColor" opacity=".25"/>
+        <!-- oven base -->
+        <rect x="40" y="210" width="260" height="65" fill="#F2E6D2"/>
+        <rect x="40" y="210" width="260" height="65" fill="none" stroke="#2D1A11" stroke-width="3"/>
+        <!-- bricks on base -->
+        <line x1="100" y1="210" x2="100" y2="275" stroke="#2D1A11" stroke-width="2" opacity=".4"/>
+        <line x1="170" y1="210" x2="170" y2="275" stroke="#2D1A11" stroke-width="2" opacity=".4"/>
+        <line x1="240" y1="210" x2="240" y2="275" stroke="#2D1A11" stroke-width="2" opacity=".4"/>
+        <line x1="40" y1="243" x2="300" y2="243" stroke="#2D1A11" stroke-width="2" opacity=".4"/>
+        <!-- dome -->
+        <path d="M40 215 Q40 60 170 60 Q300 60 300 215 Z" fill="#F2E6D2" stroke="#2D1A11" stroke-width="3"/>
+        <!-- oven mouth -->
+        <path d="M105 215 Q105 130 170 130 Q235 130 235 215 Z" fill="#2D1A11"/>
+        <!-- flame -->
+        <path d="M155 215 Q140 175 170 165 Q200 175 185 215 Z" fill="currentColor"/>
+        <path d="M163 215 Q155 190 170 180 Q185 190 177 215 Z" fill="#F2E6D2" opacity=".7"/>
+        <!-- chimney -->
+        <rect x="155" y="20" width="30" height="55" fill="#F2E6D2" stroke="#2D1A11" stroke-width="3"/>
+        <path d="M150 20 L190 20 L180 12 L160 12 Z" fill="#2D1A11"/>
+        <!-- smoke wisps -->
+        <path d="M170 5 q-12 -10 0 -22 q12 -8 0 -22" fill="none" stroke="#F2E6D2" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+        <!-- dome detail bricks -->
+        <path d="M80 180 Q170 100 260 180" fill="none" stroke="#2D1A11" stroke-width="1.5" opacity=".35"/>
+        <path d="M65 145 Q170 70 275 145" fill="none" stroke="#2D1A11" stroke-width="1.5" opacity=".3"/>
+      </svg>
+    </div>
+
+    <ul class="hero__bullets" aria-label="What we cook">
+      <li>Pizzas</li>
+      <li>Doner Kebabs</li>
+      <li>Burgers</li>
+      <li>Pasta</li>
+      <li>Kids' Boxes</li>
+    </ul>
+
+    <blockquote class="hero__quote">
+      The kind of takeaway you grew up with — pick up the phone, give us your order,
+      <em>twenty minutes</em> later it's in a box on your kitchen table.
+    </blockquote>
+  </aside>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Stone-baked pizzas</span>
+    <span>Doner kebabs on the rotator</span>
+    <span>Burger meal deals</span>
+    <span>Pasta · Kids' boxes</span>
+    <span>Open for evening service</span>
+    <span>Call 01553 767012</span>
+    <span>Wootton Road · PE30 4EX</span>
+    <span>Family-run since 1987</span>
+    <span>Stone-baked pizzas</span>
+    <span>Doner kebabs on the rotator</span>
+    <span>Burger meal deals</span>
+    <span>Pasta · Kids' boxes</span>
+    <span>Open for evening service</span>
+    <span>Call 01553 767012</span>
+    <span>Wootton Road · PE30 4EX</span>
+    <span>Family-run since 1987</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <p class="section-label">About the shop</p>
+  <h2 class="section-title reveal" id="about-title">Four decades on the same corner of Gaywood.</h2>
+
+  <div class="about__grid">
+    <div class="about__body reveal">
+      <p>
+        Gaywood Pizza House has been part of the Wootton Road parade for the best part of
+        forty years — a small family takeaway that quietly fed a generation of King's Lynn
+        teenagers, then their kids, and now their kids' kids.
+      </p>
+      <p>
+        There is no formula here. Pizza dough, a hot oven, a doner spit, a fryer, a
+        chest-high counter, and the same telephone number people have been ringing since
+        the late eighties. It's the kind of place you find by living nearby — not the kind
+        of place that needs to shout.
+      </p>
+      <p>
+        If you've never tried us, the pizzas are stone-baked, the kebabs are sliced to
+        order, and the kids' boxes will keep a six-year-old quiet for the length of a
+        whole film. Ring through, or come and stand at the counter — both work.
+      </p>
+    </div>
+
+    <dl class="about__facts reveal">
+      <div>
+        <dt>Trading since</dt>
+        <dd>1987 — same site, same family takeaway</dd>
+      </div>
+      <div>
+        <dt>What we cook</dt>
+        <dd>Stone-baked pizzas, doner kebabs, burgers, pasta, kids' boxes</dd>
+      </div>
+      <div>
+        <dt>How to order</dt>
+        <dd>Phone ahead on <a href="tel:+441553767012" style="color:inherit;text-decoration:underline">01553 767012</a> or walk in</dd>
+      </div>
+      <div>
+        <dt>Where</dt>
+        <dd>16 Wootton Road · Gaywood · PE30 4EX</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" aria-labelledby="menu-title">
+  <p class="section-label">What's on</p>
+  <h2 class="section-title reveal" id="menu-title">The menu, in five honest sections.</h2>
+  <p class="menu__intro reveal">
+    No price list pinned up here — call the shop for what's current and what's in tonight.
+    Below is what the kitchen does, day in, day out.
+  </p>
+
+  <ol class="menu__list" role="list">
+    <li class="menu__item reveal">
+      <span class="menu__num">01</span>
+      <div>
+        <h3 class="menu__heading">Stone-baked <em>Pizzas</em></h3>
+        <p class="menu__desc">
+          A classic short list — Margherita, Pepperoni, Ham &amp; Mushroom, Hawaiian,
+          the works. Plus sweet pizzas for anyone after pudding by the slice.
+        </p>
+      </div>
+    </li>
+    <li class="menu__item reveal">
+      <span class="menu__num">02</span>
+      <div>
+        <h3 class="menu__heading">Doner <em>Kebabs</em></h3>
+        <p class="menu__desc">
+          Sliced to order off the rotator. Pitta, salad, chilli or garlic sauce — say
+          how you want it when you ring.
+        </p>
+      </div>
+    </li>
+    <li class="menu__item reveal">
+      <span class="menu__num">03</span>
+      <div>
+        <h3 class="menu__heading">Burger <em>Meal Deals</em></h3>
+        <p class="menu__desc">
+          Quarter-pounders, cheeseburgers, chicken burgers — done with fries and a can.
+          The kind of order you can phone in and pick up on the way home.
+        </p>
+      </div>
+    </li>
+    <li class="menu__item reveal">
+      <span class="menu__num">04</span>
+      <div>
+        <h3 class="menu__heading">Pasta <em>Meals</em></h3>
+        <p class="menu__desc">
+          A short pasta menu for when pizza isn't the answer. Filling, simple, served
+          in proper takeaway tubs.
+        </p>
+      </div>
+    </li>
+    <li class="menu__item reveal">
+      <span class="menu__num">05</span>
+      <div>
+        <h3 class="menu__heading">Kids' <em>Boxes</em></h3>
+        <p class="menu__desc">
+          Smaller portions, simple flavours, packed to travel. Built for the back seat
+          of the car on the way home from football.
+        </p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="menu__cta reveal">
+    <p>Want today's specials? Ring the shop.</p>
+    <a href="tel:+441553767012">Call 01553 767012</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" aria-labelledby="gallery-title">
+  <p class="section-label">Inside the shop</p>
+  <h2 class="section-title reveal" id="gallery-title">Photos coming soon.</h2>
+
+  <p class="gallery__intro reveal">
+    Real shots of the counter, the oven, the kebab rotator and the menu board are on
+    the way. In the meantime, here are the rough zones the camera is heading for —
+    if you want to see them in person, walk in.
+  </p>
+
+  <div class="gallery__grid" role="list">
+    <div class="gallery__card reveal" role="listitem">
+      <small>01</small><span>The counter</span>
+    </div>
+    <div class="gallery__card reveal" role="listitem">
+      <small>02</small><span>Stone oven</span>
+    </div>
+    <div class="gallery__card reveal" role="listitem">
+      <small>03</small><span>Doner rotator</span>
+    </div>
+    <div class="gallery__card reveal" role="listitem">
+      <small>04</small><span>The menu board</span>
+    </div>
+    <div class="gallery__card reveal" role="listitem">
+      <small>05</small><span>Boxes ready to go</span>
+    </div>
+    <div class="gallery__card reveal" role="listitem">
+      <small>06</small><span>Wootton Road frontage</span>
+    </div>
+  </div>
+
+  <p class="gallery__note">Shoot scheduled — drop in to see the shop in person.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-title">
+  <p class="section-label">Visit · Order · Find us</p>
+  <h2 class="section-title reveal" id="contact-title">Open this evening — call ahead.</h2>
+
+  <div class="contact__grid">
+    <div class="contact__block reveal">
+      <dl>
+        <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+441553767012">01553&nbsp;767012</a></dd>
+          <p class="small" style="margin-top:.5rem">
+            Best way to order. Tell us what you want, what time you'd like it, and we'll
+            have it ready on the counter.
+          </p>
+        </div>
+        <div>
+          <dt>Address</dt>
+          <dd style="font-size:clamp(1.2rem,1.2vw + .9rem,1.7rem)">
+            16 Wootton Road<br>
+            Gaywood, King's Lynn<br>
+            Norfolk · PE30 4EX
+          </dd>
+        </div>
+        <div>
+          <dt>Hours</dt>
+          <dd style="font-size:clamp(1.05rem,.8vw + .8rem,1.35rem)">
+            Open daily for evening service.
+          </dd>
+          <p class="small" style="margin-top:.5rem">
+            Hours can shift around bank holidays — give the shop a ring on
+            <a href="tel:+441553767012" style="color:var(--ember);text-decoration:underline">01553&nbsp;767012</a>
+            before you set out.
+          </p>
+        </div>
+      </dl>
+    </div>
+
+    <div class="reveal">
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=16+Wootton+Road,+Gaywood,+King's+Lynn,+PE30+4EX&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Gaywood Pizza House at 16 Wootton Road, King's Lynn PE30 4EX"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot__grid">
+    <div class="foot__mark">
+      <span>Gaywood</span>
+      <span class="a">Pizza House.</span>
+      <small>
+        Family takeaway on Wootton Road in Gaywood, King's Lynn — pizzas, kebabs, burgers
+        and pasta from the same shop, the same family, since 1987.
+      </small>
+    </div>
+    <div class="foot__col">
+      <h4>Find us</h4>
+      <p>16 Wootton Road<br>Gaywood<br>King's Lynn<br>Norfolk · PE30 4EX</p>
+    </div>
+    <div class="foot__col">
+      <h4>Order &amp; ask</h4>
+      <a href="tel:+441553767012">01553 767012</a>
+      <a href="#menu">See the menu</a>
+      <a href="#contact">Map &amp; directions</a>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>Gaywood Pizza House · Est. 1987</span>
+    <span>16 Wootton Road · PE30 4EX</span>
+  </div>
+</footer>
+
+</body>
+</html>
